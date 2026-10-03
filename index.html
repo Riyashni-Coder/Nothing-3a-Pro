@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nothing Phone (3a)</title>
+
+<style>
+/* =========================================================
+   NOTHING PHONE (3a) — REFERENCE STYLE
+   Uses the uploaded images as the section artwork.
+   ========================================================= */
+
+@font-face{
+    font-family:"Ndot55";
+    src:url("https://nl.nothing.tech/cdn/shop/t/3/assets/Ndot-55.otf") format("opentype");
+    font-weight:400;
+    font-style:normal;
+    font-display:swap;
+}
+
+@font-face{
+    font-family:"NType82";
+    src:url("https://nl.nothing.tech/cdn/shop/t/3/assets/NType82-Regular.otf") format("opentype");
+    font-weight:400;
+    font-style:normal;
+    font-display:swap;
+}
+
+@font-face{
+    font-family:"NType82Headline";
+    src:url("https://nl.nothing.tech/cdn/shop/t/3/assets/NType82-Headline.otf") format("opentype");
+    font-weight:400;
+    font-style:normal;
+    font-display:swap;
+}
+
+@font-face{
+    font-family:"LetteraMono";
+    src:url("https://nl.nothing.tech/cdn/shop/t/3/assets/LetteraMonoLLCondLight-Regular.otf") format("opentype");
+    font-weight:300;
+    font-style:normal;
+    font-display:swap;
+}
+
+:root{
+    --black:#050606;
+    --white:#f7f7f5;
+    --gray:#606060;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    width:100%;
+    overflow-x:hidden;
+    background:var(--white);
+    color:#111;
+    font-family:"NType82", Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+}
+
+img{
+    display:block;
+    max-width:100%;
+}
+
+button{
+    font:inherit;
+}
+
+.section{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+}
+
+.kicker{
+    font-family:"LetteraMono","NType82",monospace;
+    font-size:11px;
+    line-height:1.2;
+    letter-spacing:.04em;
+}
+
+.body-copy{
+    font-size:13px;
+    line-height:1.35;
+}
+
+.headline{
+    font-family:"NType82Headline","NType82",Arial,sans-serif;
+    font-weight:400;
+}
+
+/* =========================
+   NAV
+   ========================= */
+
+.nav{
+    position:absolute;
+    z-index:20;
+    top:0;
+    left:0;
+    width:100%;
+    height:72px;
+
+    display:grid;
+    grid-template-columns:150px 1fr 150px;
+    align-items:center;
+
+    padding:0 46px;
+    color:#fff;
+}
+
+.logo img{
+    display:block;
+    width:128px;
+    height:auto;
+    filter:brightness(0) invert(1);
+}
+
+.logo{
+    font-family:"Ndot55",monospace;
+    font-size:25px;
+    line-height:1;
+    letter-spacing:0;
+    white-space:nowrap;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:36px;
+    justify-self:start;
+    margin-left:25px;
+}
+
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-size:12px;
+    line-height:1;
+}
+
+.nav-icons{
+    justify-self:end;
+    display:flex;
+    align-items:center;
+    gap:24px;
+}
+
+.search-icon{
+    width:17px;
+    height:17px;
+    border:1.5px solid #fff;
+    border-radius:50%;
+    position:relative;
+}
+
+.search-icon::after{
+    content:"";
+    position:absolute;
+    width:7px;
+    height:1.5px;
+    background:#fff;
+    right:-5px;
+    bottom:-2px;
+    transform:rotate(48deg);
+    transform-origin:left center;
+}
+
+.bag-icon{
+    width:14px;
+    height:15px;
+    border:1.4px solid #fff;
+    border-radius:2px;
+    position:relative;
+}
+
+.bag-icon::before{
+    content:"";
+    position:absolute;
+    width:6px;
+    height:5px;
+    border:1.4px solid #fff;
+    border-bottom:0;
+    border-radius:5px 5px 0 0;
+    left:2.5px;
+    top:-6px;
+}
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero{
+    height:clamp(520px,41vw,720px);
+    background:#050606 url("3a 2.jpeg") center center / cover no-repeat;
+    color:#fff;
+}
+
+.hero-copy{
+    position:absolute;
+    z-index:3;
+    left:4.55%;
+    top:29%;
+    width:390px;
+}
+
+.hero-copy .kicker{
+    margin-bottom:9px;
+}
+
+.hero-title{
+    font-family:"NType82Headline","NType82",Arial,sans-serif;
+    font-size:clamp(32px,3.15vw,54px);
+    line-height:.96;
+    letter-spacing:-.025em;
+}
+
+.hero-subtitle{
+    font-family:"NType82",Arial,sans-serif;
+    font-size:clamp(24px,2.25vw,39px);
+    line-height:1;
+    margin-top:8px;
+}
+
+.hero-copy .body-copy{
+    margin-top:27px;
+    color:#e7e7e7;
+    font-size:13px;
+}
+
+.explore{
+    margin-top:23px;
+    min-width:140px;
+    height:38px;
+    padding:0 22px;
+    border:0;
+    border-radius:22px;
+    background:#fff;
+    color:#111;
+    font-size:12px;
+    cursor:pointer;
+}
+
+.hero-side{
+    position:absolute;
+    z-index:3;
+    right:4.7%;
+    top:35%;
+    color:#fff;
+    text-align:center;
+    font-family:"LetteraMono",monospace;
+    font-size:11px;
+    line-height:1.35;
+    letter-spacing:.08em;
+}
+
+/* =========================
+   GLYPH
+   ========================= */
+
+.glyph{
+    height:clamp(350px,31vw,560px);
+    background:#f4f4f2 url("WhatsApp Image 2026-09-29 at 6.43.58 PM.jpeg")
+        center center / cover no-repeat;
+}
+
+.glyph-copy{
+    position:absolute;
+    z-index:3;
+    left:42%;
+    top:18%;
+    width:31%;
+}
+
+.glyph-copy h2{
+    margin-top:8px;
+    font-family:"NType82Headline","NType82",sans-serif;
+    font-size:clamp(27px,2.45vw,43px);
+    line-height:.95;
+    letter-spacing:-.02em;
+}
+
+.glyph-copy p{
+    margin-top:18px;
+    max-width:330px;
+    color:#555;
+    font-size:13px;
+    line-height:1.38;
+}
+
+.glyph-features{
+    display:flex;
+    gap:34px;
+    margin-top:26px;
+}
+
+.glyph-feature{
+    text-align:center;
+    font-size:10px;
+}
+
+.glyph-icon{
+    height:26px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:6px;
+    font-size:19px;
+}
+
+.glyph-custom{
+    position:absolute;
+    z-index:3;
+    left:92%;
+    top:75%;
+    width:13%;
+    font-size:11px;
+    line-height:1.15;
+}
+
+.dot{
+    display:block;
+    width:7px;
+    height:7px;
+    margin-top:14px;
+    border-radius:50%;
+    background:#d4d4d4;
+    position:relative;
+    left:20%;
+  
+
+}
+
+.dot.active{
+    background:#e00000;
+}
+
+/* =========================
+   CAMERA
+   ========================= */
+
+.camera{
+    height:clamp(420px,28vw,520px);
+    background:#050606 url("WhatsApp Image 2026-09-29 at 6.43.58 PM (1).jpeg")
+        center center / cover no-repeat;
+    color:#fff;
+}
+
+.camera-copy{
+    position:absolute;
+    z-index:3;
+    left:4.55%;
+    top:12%;
+}
+
+.camera-copy h2{
+    margin-top:8px;
+    font-family:"NType82Headline","NType82",sans-serif;
+    font-size:clamp(29px,2.55vw,45px);
+    line-height:.95;
+    letter-spacing:-.02em;
+}
+
+.camera-copy p{
+    margin-top:17px;
+    color:#e5e5e5;
+    font-size:12px;
+    line-height:1.4;
+}
+
+.camera-stats{
+    display:flex;
+    gap:35px;
+    margin-top:38px;
+}
+
+.camera-stat{
+    min-width:74px;
+    padding-right:24px;
+    border-right:1px solid rgba(255,255,255,.5);
+}
+
+.camera-stat:last-child{
+    border-right:0;
+}
+
+.camera-stat strong{
+    display:block;
+    font-family:"NType82",sans-serif;
+    font-size:13px;
+    font-weight:400;
+}
+
+.camera-stat span{
+    display:block;
+    margin-top:4px;
+    font-size:10px;
+    color:#ddd;
+}
+
+.zoom{
+    position:absolute;
+    z-index:3;
+    right:4.8%;
+    top:34%;
+    font-size:11px;
+    line-height:1.7;
+    text-align:left;
+}
+
+/* =========================
+   DISPLAY + PERFORMANCE
+   ========================= */
+
+.specs{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    min-height:clamp(330px,25vw,470px);
+}
+
+.display{
+    position:relative;
+    background:#f5f5f3;
+    overflow:hidden;
+}
+
+.display img{
+    left:-10px;
+    top:0;
+    width:50%;
+    height:100%;
+    object-fit:cover;
+    object-position:left top;
+}
+
+.display-copy{
+    position:absolute;
+    left:53%;
+    top:19%;
+    width:46%;
+}
+
+.display-copy h2,
+.performance-copy h2{
+    margin-top:7px;
+    font-family:"NType82Headline","NType82",sans-serif;
+    font-size:clamp(25px,2.25vw,40px);
+    line-height:.96;
+    letter-spacing:-.02em;
+}
+
+.display-copy p{
+    margin-top:18px;
+    color:#555;
+    font-size:12px;
+    line-height:1.4;
+}
+
+.stat-row{
+    display:flex;
+    gap:26px;
+    margin-top:28px;
+}
+
+.stat strong{
+    display:block;
+    font-size:13px;
+    font-weight:400;
+}
+
+.stat span{
+    display:block;
+    margin-top:4px;
+    font-size:10px;
+    color:#555;
+}
+
+.performance{
+    position:relative;
+    background:#050606;
+    color:#fff;
+    overflow:hidden;
+}
+
+.performance::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,rgba(0,0,0,.15),rgba(0,0,0,.1));
+    pointer-events:none;
+}
+
+.performance img{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+}
+
+.performance-copy{
+    position:absolute;
+    z-index:2;
+    left:7%;
+    top:19%;
+    width:78%;
+}
+
+.performance-copy p{
+    margin-top:17px;
+    color:#ddd;
+    font-size:12px;
+    line-height:1.4;
+}
+
+.performance .stat-row{
+    gap:30px;
+}
+
+.performance .stat{
+    padding-right:26px;
+    border-right:1px solid rgba(255,255,255,.45);
+}
+
+.performance .stat:last-child{
+    border-right:0;
+}
+
+.performance .stat span{
+    color:#ddd;
+}
+
+/* =========================
+   DESIGN
+   ========================= */
+
+.design{
+    height:clamp(350px,27vw,500px);
+    background:#f4f4f2 url("abt 3a.jpeg") center center / cover no-repeat;
+    
+background-position:calc(50% + 200px) center;
+}
+
+.design-copy{
+    position:absolute;
+    left:4.55%;
+    top:18%;
+    width:40%;
+}
+
+.design-copy h2{
+    margin-top:7px;
+    font-family:"NType82Headline","NType82",sans-serif;
+    font-size:clamp(28px,2.5vw,44px);
+    line-height:.95;
+    letter-spacing:-.02em;
+}
+
+.design-copy p{
+    margin-top:16px;
+    color:#555;
+    font-size:12px;
+    line-height:1.4;
+}
+
+.design-points{
+    display:flex;
+    gap:30px;
+    margin-top:28px;
+}
+
+.design-point{
+    font-size:10px;
+    line-height:1.25;
+}
+
+.point-icon{
+    width:24px;
+    height:24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:8px;
+    font-size:16px;
+}
+
+.less{
+    position:absolute;
+    z-index:3;
+    right:5.5%;
+    top:31%;
+    font-family:"NType82Headline","NType82",sans-serif;
+    font-size:clamp(21px,2vw,35px);
+    line-height:.9;
+}
+
+.less::after{
+    content:"";
+    display:block;
+    width:22px;
+    height:3px;
+    margin-top:15px;
+    background:#e00000;
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.footer{
+    height:clamp(260px,21vw,380px);
+    background:#050606 url("base.jpeg") center bottom / cover no-repeat;
+    color:#fff;
+}
+
+.footer-logo img{
+    display:block;
+    width:118px;
+    height:auto;
+    filter:brightness(0) invert(1);
+}
+
+.footer-logo{
+    position:absolute;
+    left:4.55%;
+    top:15%;
+    font-family:"Ndot55",monospace;
+    font-size:23px;
+}
+
+.footer-center{
+    position:absolute;
+    left:50%;
+    top:17%;
+    transform:translateX(-50%);
+    text-align:center;
+}
+
+.footer-center h2{
+    font-family:"NType82Headline","NType82",sans-serif;
+    font-size:24px;
+    line-height:1;
+}
+
+.footer-center p{
+    margin-top:5px;
+    font-size:12px;
+}
+
+.footer-center .explore{
+    margin-top:16px;
+}
+
+.footer-community{
+    position:absolute;
+    right:4.55%;
+    top:17%;
+    text-align:center;
+    font-family:"LetteraMono",monospace;
+    font-size:10px;
+    line-height:1.4;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width:900px){
+    .nav{
+        grid-template-columns:110px 1fr 90px;
+        padding:0 24px;
+    }
+
+    .nav-links{
+        gap:18px;
+        margin-left:12px;
+    }
+
+    .nav-links a{
+        font-size:10px;
+    }
+
+    .hero-copy{
+        width:340px;
+    }
+
+    .glyph-copy{
+        left:35%;
+        width:37%;
+    }
+
+    .glyph-features{
+        gap:16px;
+    }
+
+    .specs{
+        grid-template-columns:1fr;
+    }
+
+    .display,
+    .performance{
+        min-height:370px;
+    }
+
+    .design-copy{
+        width:50%;
+    }
+}
+
+@media (max-width:650px){
+    .nav{
+        height:60px;
+        grid-template-columns:1fr auto;
+    }
+
+    .nav-links{
+        display:none;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .hero{
+        height:680px;
+        background-position:center center;
+    }
+
+    .hero-copy{
+        left:25px;
+        top:110px;
+        width:320px;
+    }
+
+    .hero-title{
+        font-size:34px;
+    }
+
+    .hero-subtitle{
+        font-size:25px;
+    }
+
+    .hero-side{
+        display:none;
+    }
+
+    .glyph{
+        height:650px;
+        background-position:center center;
+    }
+
+    .glyph-copy{
+        left:25px;
+        top:300px;
+        width:330px;
+    }
+
+    .glyph-custom{
+        right:25px;
+        top:40px;
+        width:110px;
+    }
+
+    .camera{
+        height:680px;
+        background-position:center center;
+    }
+
+    .camera-copy{
+        left:25px;
+        top:55px;
+    }
+
+    .zoom{
+        display:none;
+    }
+
+    .display{
+        min-height:650px;
+    }
+
+    .display img{
+        width:100%;
+        height:52%;
+        object-fit:cover;
+    }
+
+    .display-copy{
+        left:25px;
+        top:56%;
+        width:calc(100% - 50px);
+    }
+
+    .performance{
+        min-height:650px;
+    }
+
+    .performance-copy{
+        left:25px;
+        top:55px;
+        width:calc(100% - 50px);
+    }
+
+    .design{
+        height:680px;
+        background-position:center top;
+    }
+
+    .design-copy{
+        left:25px;
+        top:330px;
+        width:calc(100% - 50px);
+    }
+
+    .less{
+        right:25px;
+        top:520px;
+    }
+
+    .footer{
+        height:420px;
+    }
+
+    .footer-logo{
+        left:25px;
+    }
+
+    .footer-center{
+        top:90px;
+        width:90%;
+    }
+
+    .footer-community{
+        right:25px;
+        top:260px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="section hero">
+
+    <nav class="nav">
+        <div class="logo"><img src="nothing-logo.svg" alt="NOTHING"></div>
+
+        <div class="nav-links">
+            <a href="#phone">Phone</a>
+            <a href="#audio">Audio</a>
+            <a href="#accessories">Accessories</a>
+            <a href="#support">Support</a>
+        </div>
+
+        <div class="nav-icons" aria-label="Search and bag">
+            <span class="search-icon"></span>
+            <span class="bag-icon"></span>
+        </div>
+    </nav>
+
+    <div class="hero-copy">
+        <div class="kicker">Phone (3a)</div>
+        <h1 class="hero-title">Nothing Phone (3a)</h1>
+        <div class="hero-subtitle">Essential. Different.</div>
+
+        <p class="body-copy">
+            A new chapter in the Nothing story.<br>
+            Powerful performance, a refined design,<br>
+            and the iconic Glyph Interface — now in the 3a.
+        </p>
+
+        <button class="explore">Explore 3a&nbsp;&nbsp; →</button>
+    </div>
+
+    <div class="hero-side">
+        SAME<br>
+        ICONIC<br>
+        DNA.<br>
+        MORE<br>
+        POWER.
+    </div>
+</section>
+
+
+<!-- GLYPH -->
+<section class="section glyph" id="phone">
+
+    <div class="glyph-copy">
+        <div class="kicker">GLYPH INTERFACE</div>
+
+        <h2>More than just lights.<br>It's a language.</h2>
+
+        <p>
+            The Glyph Interface lets you know what's
+            happening, at a glance. Notifications, calls,
+            charging and more — all without looking
+            at your screen.
+        </p>
+
+        <div class="glyph-features">
+            <div class="glyph-feature">
+                <div class="glyph-icon">📞︎</div>
+                Calls
+            </div>
+            <div class="glyph-feature">
+                <div class="glyph-icon">✉︎</div>
+                Messages
+            </div>
+            <div class="glyph-feature">
+                <div class="glyph-icon">♫</div>
+                Music
+            </div>
+            <div class="glyph-feature">
+                <div class="glyph-icon">ϟ</div>
+                Charging
+            </div>
+        </div>
+    </div>
+
+    <div class="glyph-custom">
+        Customise<br>
+        Your Glyph
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
+</section>
+
+
+<!-- CAMERA -->
+<section class="section camera">
+
+    <div class="camera-copy">
+        <div class="kicker">CAMERA</div>
+
+        <h2>50 MP. Closer to<br>the real you.</h2>
+
+        <p>
+            Capture more of what matters with the 50 MP<br>
+            main camera, 50 MP periscope telephoto and<br>
+            8 MP ultra-wide. From everyday moments to<br>
+            distant details, it's all in focus.
+        </p>
+
+        <div class="camera-stats">
+            <div class="camera-stat">
+                <strong>50 MP</strong>
+                <span>Main Camera</span>
+            </div>
+
+            <div class="camera-stat">
+                <strong>50 MP</strong>
+                <span>Periscope Telephoto</span>
+            </div>
+
+            <div class="camera-stat">
+                <strong>8 MP</strong>
+                <span>Ultra Wide</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="zoom">
+        3x Optical Zoom<br>
+        60x Ultra Zoom<br>
+        ─────────
+    </div>
+</section>
+
+
+<!-- DISPLAY / PERFORMANCE -->
+<section class="section specs">
+
+    <div class="display">
+
+        <img src="dis.jpeg" alt="Nothing Phone display">
+
+        <div class="display-copy">
+            <div class="kicker">DISPLAY</div>
+
+            <h2>Brilliant. Smooth.<br>Immersive.</h2>
+
+            <p>
+                6.77" AMOLED display with 120Hz refresh rate
+                delivers vibrant colours, deep blacks and
+                ultra-smooth scrolling.
+            </p>
+
+            <div class="stat-row">
+                <div class="stat">
+                    <strong>6.77"</strong>
+                    <span>AMOLED</span>
+                </div>
+                <div class="stat">
+                    <strong>120Hz</strong>
+                    <span>Refresh Rate</span>
+                </div>
+                <div class="stat">
+                    <strong>3000 nits</strong>
+                    <span>Peak Brightness</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="performance">
+
+        <img src="gen.jpeg" alt="Snapdragon processor">
+
+        <div class="performance-copy">
+            <div class="kicker">PERFORMANCE</div>
+
+            <h2>Built for what's next.</h2>
+
+            <p>
+                Powered by the Snapdragon 7s Gen 3 processor<br>
+                and a long-lasting 5000mAh battery, the 3a keeps<br>
+                up with your day and beyond.
+            </p>
+
+            <div class="stat-row">
+                <div class="stat">
+                    <strong>Snapdragon</strong>
+                    <span>7s Gen 3</span>
+                </div>
+                <div class="stat">
+                    <strong>5000mAh</strong>
+                    <span>Battery</span>
+                </div>
+                <div class="stat">
+                    <strong>50W</strong>
+                    <span>Fast Charging</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- DESIGN -->
+<section class="section design">
+
+    <div class="design-copy">
+        <div class="kicker">DESIGN</div>
+
+        <h2>Transparent by design.<br>Minimal by nature.</h2>
+
+        <p>
+            The 3a brings the Nothing DNA to life with its<br>
+            transparent back, clean lines and premium feel.
+        </p>
+
+        <div class="design-points">
+            <div class="design-point">
+                <div class="point-icon">▯</div>
+                Transparent<br>Back
+            </div>
+
+            <div class="design-point">
+                <div class="point-icon">◇</div>
+                Premium<br>Build
+            </div>
+
+            <div class="design-point">
+                <div class="point-icon">◉</div>
+                IP64<br>Water &amp; Dust Resistant
+            </div>
+        </div>
+    </div>
+
+    <div class="less">
+        Less<br>
+        but<br>
+        better.
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="section footer">
+
+    <div class="footer-logo"><img src="nothing-logo.svg" alt="NOTHING"></div>
+
+    <div class="footer-center">
+        <h2>Nothing Phone (3a)</h2>
+        <p>Essential. Different.</p>
+        <button class="explore">Explore 3a&nbsp;&nbsp; →</button>
+    </div>
+
+    <div class="footer-community">
+        Join the community<br>
+        #NothingPhone
+    </div>
+</footer>
+
+</body>
+</html>
